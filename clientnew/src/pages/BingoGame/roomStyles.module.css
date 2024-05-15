@@ -1,0 +1,25 @@
+.chat {
+  padding: 20px;
+  margin-top: -1.5%;
+  width: 25%;
+}
+
+.bingoRoom {
+  display: flex;
+  flex-direction: row;
+  padding: 4% 0%;
+  width: 100%;
+  background-color: #f0eee4;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+
+.members {
+  padding-left: 2%;
+  margin-top: -2%;
+}
+
+.bingoGame {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}

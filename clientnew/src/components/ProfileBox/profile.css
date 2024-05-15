@@ -1,0 +1,90 @@
+.profile__box{
+    display:flex;
+    padding:3%;
+    border:2px solid black;
+    border-radius: 10px;
+    background-image:url("https://www.transparenttextures.com/patterns/binding-dark.png");
+}
+.info{
+    width:75%;
+}
+
+.profile_img{
+    width:25%;
+}
+
+.avatar_img{
+    width:171px;
+    height:171px;
+    border-radius: 50%;
+    border:1px solid whitesmoke;
+}
+
+.more_info{
+    margin:3%;
+}
+
+.head_text{
+    font-size:1.3rem;
+    font-weight:600;
+}
+
+.ans_text{
+    font-size:1rem;
+    font-weight:800;
+    font-family:Georgia, 'Times New Roman';
+    padding-top:3px;
+    color:rgb(33, 7, 176);
+    padding-left:4px;
+}
+
+ul{
+   list-style: none;  
+}
+
+li {
+    display: flex;
+}
+
+.info h2{
+    color:rgb(252 3 61);
+}
+
+.fileUp{
+    color: transparent;
+    margin-left: 13%;
+    margin-top: 5%;
+}
+
+.uploadImg {
+  color: transparent !important;
+  background-color: aqua;
+  display: none;
+  
+
+}
+
+.uploadImg::-webkit-file-upload-button {
+  visibility: hidden;
+  display: none;
+  background-color: aqua;
+
+}
+
+.uploadImg::before {
+  content: 'Edit Image';
+  /* display: inline-block; */
+  background: rgb(3 252 232);
+  border: 1px solid #999;
+  border-radius: 10%;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  color: black;
+  font-size: 10pt;
+}
+

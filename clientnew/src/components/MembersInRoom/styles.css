@@ -1,0 +1,27 @@
+.membersHeading h5{
+    color:red;
+    font-family:cursive;
+    text-align: center;
+}
+.memberContainer{
+    margin:4% 2%;
+}
+
+.membersBlock{
+    border:2px solid black;
+    margin:1%;
+}
+
+.player{
+    padding:1%;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.you{
+    background-color: #41ee1c;
+}
+
+.player:nth-Child(4){
+    border-bottom:none;
+}

@@ -1,0 +1,35 @@
+.bingo {
+    margin: auto;
+    width: fit-content;
+}
+
+.bingo img {
+    width: 8%;
+    color: aqua;
+}
+
+.elem {
+    margin-left: 18%;
+    background-color: aqua;
+}
+
+.elem1 {
+    margin-left: 18%;
+    background-color: tomato;
+}
+
+.gridLayout {
+    /* background-color: blue; */
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+
+.gridElem {
+    background-color: violet;
+}
+
+/* .mainGrid {
+    background-color: chartreuse;
+} */
