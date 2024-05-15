@@ -13,7 +13,10 @@ import path from 'path';
 
 dotenv.config();
 const app = express();
-const server = http.createServer(app);
+
+const server = app.listen(5000, (req, res) => {
+  console.log("Port successfully connected");
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ extended: true, limit: "50mb" }));
@@ -113,9 +116,3 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-
-
-
-server.listen(5000, (req, res) => {
-  console.log("Port successfully connected");
-});
