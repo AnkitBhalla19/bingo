@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/auth";
-const profileURl = "http://localhost:5000/profile";
-const gameURl = "http://localhost:5000/game";
+const url = process.env.NODE_ENV === 'production' ? "https://bingo-2z83.onrender.com/auth" : "http://localhost:5000/auth";
+const profileURl = process.env.NODE_ENV === 'production' ? "https://bingo-2z83.onrender.com/profile" : "http://localhost:5000/profile";
+const gameURl = process.env.NODE_ENV === 'production' ? "https://bingo-2z83.onrender.com/game" : "http://localhost:5000/game";
 
 export const fetchUsers= () => axios.get(url);
 export const signUpUser= (data) => axios.post(`${url}/signUp`,data);

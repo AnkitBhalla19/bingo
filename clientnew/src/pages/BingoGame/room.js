@@ -22,7 +22,7 @@ const Room = () => {
   const location = useLocation();
   const [usersLen,setUsersLen] = useState(0);
   const dispatch = useDispatch();
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT =process.env.NODE_ENV === 'production' ? "https://bingo-2z83.onrender.com" : "http://localhost:5000";
   const history = useHistory();
   const [play,setPlay] = useState(false);
   const usersRoom = useSelector((state) => state.game);

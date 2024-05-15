@@ -9,6 +9,7 @@ import http from "http";
 import { Server } from "socket.io";
 import dotenv from 'dotenv';
 import * as room from './controllers/users.js';
+import path from 'path';
 
 dotenv.config();
 const app = express();
@@ -16,16 +17,17 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ extended: true, limit: "50mb" }));
 app.use(cors());
-const corsOptions = {
-  cors: true,
-  origins: ["http://localhost:3000"],
-};
+
 
 const server = app.listen(5000, (req, res) => {
   console.log("Port successfully connected");
 });
 
-const io = new Server(server, corsOptions);
+const io = new Server(server, {
+  cors:{
+    origin: "*",
+  },
+});
 
 app.use("/auth", auth);
 app.use('/profile', profile);

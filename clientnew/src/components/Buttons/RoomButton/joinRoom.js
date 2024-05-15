@@ -32,7 +32,7 @@ export default function JoinRoom({ type }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = process.env.NODE_ENV === 'production' ? "https://bingo-2z83.onrender.com" : "http://localhost:5000";
   var [roomId, setroomId] = useState(null);
   const history = useHistory();
   const [ID, setID] = useState("");

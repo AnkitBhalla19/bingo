@@ -38,7 +38,7 @@ const BingoGrid = ({ setMessage }) => {
     ignoreQueryPrefix: true,
   });
   const history = useHistory();
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = process.env.NODE_ENV === 'production' ? "https://bingo-2z83.onrender.com" : "http://localhost:5000";
   let dependency = 0;
   const [turn, setTurn] = useState(0);
   const [bingoCut, setBingoCut] = useState({ horiz: [], vert: [], diag: [] });

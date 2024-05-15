@@ -35,7 +35,8 @@ function Copyright() {
 }
 
 async function loginUser(credentials) {
-  return fetch("http://localhost:5000/SignIn", {
+  const url= process.env.NODE_ENV === 'production' ? "https://bingo-2z83.onrender.com/SignIn" : "http://localhost:5000/SignIn";
+  return fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
