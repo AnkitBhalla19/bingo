@@ -18,10 +18,7 @@ const server = http.createServer(app);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ extended: true, limit: "50mb" }));
 app.use(cors());
-const corsOptions = {
-  cors: true,
-  origins: ["http://localhost:3000"],
-};
+
 
 const io = new Server(server, {
   cors:{
@@ -103,9 +100,6 @@ try {
   console.log(error.message);
 }
 
-app.get("/", (req, res) => {
-  res.send("Hello Guys");
-});
 
 const __dirname = path.resolve();
 
@@ -116,9 +110,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "clientnew", "build", "index.html"));
   });
 }
-
-
-
 
 server.listen(5000, (req, res) => {
   console.log("Port successfully connected");
