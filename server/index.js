@@ -21,12 +21,13 @@ const server = app.listen(5000, (req, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ extended: true, limit: "50mb" }));
 app.use(cors());
-const corsOptions = {
-  cors: true,
-  origins: ["http://localhost:3000"],
-};
 
-const io = new Server(server, corsOptions);
+
+const io = new Server(server, {
+  cors:{
+    origin: "*",
+  },
+});
 
 app.use("/auth", auth);
 app.use('/profile', profile);
