@@ -12,7 +12,6 @@ import * as room from './controllers/users.js';
 
 dotenv.config();
 const app = express();
-const server = http.createServer(app);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ extended: true, limit: "50mb" }));
@@ -21,6 +20,10 @@ const corsOptions = {
   cors: true,
   origins: ["http://localhost:3000"],
 };
+
+const server = app.listen(5000, (req, res) => {
+  console.log("Port successfully connected");
+});
 
 const io = new Server(server, corsOptions);
 
@@ -100,8 +103,4 @@ try {
 
 app.get("/", (req, res) => {
   res.send("Hello Guys");
-});
-
-server.listen(5000, (req, res) => {
-  console.log("Port successfully connected");
 });
