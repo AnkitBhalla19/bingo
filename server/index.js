@@ -102,9 +102,9 @@ try {
   console.log(error.message);
 }
 
-app.get("/", (req, res) => {
-  res.send("Hello Guys");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello Guys");
+// });
 
 const __dirname = path.resolve();
 
