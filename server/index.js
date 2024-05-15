@@ -13,15 +13,15 @@ import path from 'path';
 
 dotenv.config();
 const app = express();
+const server = http.createServer(app);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ extended: true, limit: "50mb" }));
 app.use(cors());
-
-
-const server = app.listen(5000, (req, res) => {
-  console.log("Port successfully connected");
-});
+const corsOptions = {
+  cors: true,
+  origins: ["http://localhost:3000"],
+};
 
 const io = new Server(server, {
   cors:{
@@ -105,4 +105,21 @@ try {
 
 app.get("/", (req, res) => {
   res.send("Hello Guys");
+});
+
+const __dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/clientnew/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "clientnew", "build", "index.html"));
+  });
+}
+
+
+
+
+server.listen(5000, (req, res) => {
+  console.log("Port successfully connected");
 });
