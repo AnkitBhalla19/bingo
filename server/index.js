@@ -9,6 +9,7 @@ import http from "http";
 import { Server } from "socket.io";
 import dotenv from 'dotenv';
 import * as room from './controllers/users.js';
+import path from 'path';
 
 dotenv.config();
 const app = express();
@@ -101,6 +102,19 @@ try {
 app.get("/", (req, res) => {
   res.send("Hello Guys");
 });
+
+const __dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/clientnew/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "clientnew", "build", "index.html"));
+  });
+}
+
+
+
 
 server.listen(5000, (req, res) => {
   console.log("Port successfully connected");
